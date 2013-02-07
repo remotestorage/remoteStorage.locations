@@ -124,7 +124,14 @@ remoteStorage.defineModule('locations', function(privClient, pubClient) {
 
               addFeature: function(feature) {
                 if(! feature.id) {
-                  throw "Feature requires an ID";
+                  if('uuid' in Math) {
+                    feature.id = Math.uuid();
+                  } else {
+                    throw "Feature requires an ID (and Math.uuid cannot be found to generate one)";
+                  }
+                }
+                if(! feature.type) {
+                  feature.type = 'Feature';
                 }
                 var path = 'features/' + feature.id
                 for(var i in collection.features) {

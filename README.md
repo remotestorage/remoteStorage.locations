@@ -9,9 +9,11 @@ index.html:
 ```html
 <!DOCTYPE html>
   <head>
-    <!-- from remoteStorage.js -->
+    <!-- from somewhere (needed to generate IDs): -->
+    <script src="Math.uuid.js"></script>
+    <!-- from remoteStorage.js: -->
     <script src="remoteStorage.min.js"></script>
-    <!-- from remoteStorage-locations -->
+    <!-- from remoteStorage-locations: -->
     <script src="locations.js"></script>
 
     <!-- the script below -->
@@ -70,10 +72,17 @@ remoteStorage.locations.getCollection('my-collection').
 
     // ... and added
     collection.addFeature({
-      // 'id' is required (TODO: generate this in the module)
-      id: Math.uuid(),
-      // 'type' currently also not added by module
-      type: 'Feature'
+      // 'type' and 'id' for the feature will be added automatically, like:
+      //type: 'Feature',
+      //id: Math.uuid(),
+      geometry: {
+        type: 'Point',
+        coordinates: [-150.08093299249254, 0.3955046715318032]
+      },
+      properties: {
+        title: 'Water',
+        description: 'Marks location of some water.'
+      }
     });
 
   });
