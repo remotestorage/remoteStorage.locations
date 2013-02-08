@@ -1,4 +1,4 @@
-# remoteStorage-locations
+# remoteStorage.locations
 
 This module stores [GeoJSON](http://www.geojson.org/geojson-spec.html) Features and Feature Collections.
 
@@ -13,7 +13,7 @@ index.html:
     <script src="Math.uuid.js"></script>
     <!-- from remoteStorage.js: -->
     <script src="remoteStorage.min.js"></script>
-    <!-- from remoteStorage-locations: -->
+    <!-- from remoteStorage.locations: -->
     <script src="locations.js"></script>
 
     <!-- the script below -->
