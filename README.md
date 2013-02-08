@@ -8,6 +8,7 @@ index.html:
 
 ```html
 <!DOCTYPE html>
+<html>
   <head>
     <!-- from somewhere (needed to generate IDs): -->
     <script src="Math.uuid.js"></script>
