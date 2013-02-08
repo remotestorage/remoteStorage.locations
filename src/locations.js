@@ -1,5 +1,7 @@
 remoteStorage.defineModule('locations', function(privClient, pubClient) {
 
+  pubClient.declareType('feature', $schemas.feature);
+
   var curry = remoteStorage.util.curry;
 
   var watchers = {};
